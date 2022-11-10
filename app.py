@@ -71,8 +71,8 @@ def set_scenario():
         app.config["FINANCE_PACKAGE_URL"] + "/scenario",
         json=scenario
     )
-    response.raise_for_status()
     app.logger.info("Response from endpoint: " + response.text)
+    response.raise_for_status()
 
     return redirect('/')
 
